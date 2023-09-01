@@ -34,13 +34,13 @@ export default {
 </script>
 
 <template>
-    <div class="container pt-2">
-        <div class="row row-cols-lg-6 row-cols-md-3 row-cols-sm-2 row-cols-1">
+    <div class="container pt-2 pb-5">
+        <div class="row row-cols-lg-6 row-cols-md-3 row-cols-sm-2 row-cols-1 gy-3">
             <div class="col" v-for="(card, i) in cardMenu" :key="i">
                 <div class="my-card-menu">
                     <div>
                         <img v-bind:src="`/public/img/${card.img}`" v-bind:alt="card.name">
-                        <p>{{ card.name }}</p>
+                        <h5>{{ card.name }}</h5>
                     </div>
                 </div>
             </div>
@@ -60,10 +60,11 @@ export default {
     justify-content: center;
     cursor: pointer;
 
-    p {
+    h5 {
         margin: 0;
         padding-top: 1.5rem;
         font-weight: bold;
+        font-size: 1rem;
     }
 
     img {

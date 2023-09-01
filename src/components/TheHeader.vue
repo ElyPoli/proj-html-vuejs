@@ -270,6 +270,10 @@ export default {
 <style lang="scss" scoped>
 @use "../styles/partials/variables" as *;
 
+p, h2 {
+    color: white;
+}
+
 header {
     position: relative;
     background-image: url("/public/img/header-slide-1.jpg");

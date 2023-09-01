@@ -133,7 +133,19 @@ export default {
 
 <template>
     <header>
-        <nav class="navbar navbar-expand-lg bg-success pt-3">
+        <div class="header-slider">
+            <i class="fa-solid fa-chevron-left"></i>
+            <div class="header-slider-text">
+                <h2>Accelerate Your Career</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad sint necessitatibus magni deleniti ut ipsa
+                    ullam unde, exercitationem amet nisi.
+                </p>
+                <button type="button" class="btn my-btn mt-5">Register now</button>
+            </div>
+            <i class="fa-solid fa-chevron-right"></i>
+        </div>
+        <nav class="navbar navbar-expand-lg">
             <div class="container d-flex align-items-center justify-content-between">
                 <div>
                     <a class="navbar-brand" href="#">
@@ -258,8 +270,64 @@ export default {
 <style lang="scss" scoped>
 @use "../styles/partials/variables" as *;
 
+header {
+    position: relative;
+    background-image: url("/public/img/header-slide-1.jpg");
+    height: 880px;
+}
+
+.header-slider {
+    width: 100%;
+
+    .header-slider-text,
+    i {
+        position: absolute;
+        color: white;
+    }
+
+    .header-slider-text {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+
+        h2 {
+            font-size: 4.5rem;
+            margin: 0;
+            padding-bottom: 1.3rem;
+        }
+
+        p {
+            font-size: 1.3rem;
+            margin: 0;
+        }
+    }
+
+    i {
+        font-size: 3rem;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    i:first-child {
+        padding-left: 2rem;
+        left: 0;
+    }
+
+    i:last-child {
+        padding-right: 2rem;
+        right: 0;
+    }
+}
+
+.navbar {
+    padding-top: 2rem;
+}
+
 .navbar-nav .nav-item.dropdown {
     position: relative;
+    padding-left: 1.3rem;
+    padding-right: 1.3rem;
 }
 
 .my-dropdown-center {
@@ -268,10 +336,12 @@ export default {
     transform: translateX(20%);
 }
 
-.nav-link, .my-icons-link > a {
+.nav-link,
+.my-icons-link>a {
     text-transform: uppercase;
     color: #ffffff;
     font-size: .9rem;
+    font-weight: bold;
 
     &:hover,
     &:active,
@@ -296,6 +366,7 @@ export default {
     border: none;
     border-top: 3px solid $primary-color;
     border-radius: 0;
+    margin-top: 1rem;
 
     .dropdown-item {
         color: $light-grey;
@@ -342,8 +413,7 @@ export default {
 
 .navbar-brand {
     img {
-        width: 165px;
-        height: 30px;
+        height: 32px;
     }
 }
 </style>

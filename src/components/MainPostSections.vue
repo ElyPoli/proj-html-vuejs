@@ -66,7 +66,7 @@ export default {
     }
 
     h3 {
-        font-size: 2.3rem;
+        font-size: $section-title-size;
         padding-bottom: 1rem;
         margin: 0;
     }
@@ -115,7 +115,7 @@ export default {
     }
 
     h4 {
-        font-size: 2.5rem;
+        font-size: $section-title-size;
     }
     
 }

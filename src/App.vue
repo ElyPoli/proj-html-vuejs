@@ -5,6 +5,7 @@ import MainCards from "./components/MainCards.vue";
 import MainPostSections from "./components/MainPostSections.vue";
 import MainTestimonialsCaruosel from "./components/MainTestimonialsCaruosel.vue";
 import MainTabs from "./components/MainTabs.vue";
+import MainCoursesSlider from "./components/MainCoursesSlider.vue";
 
 export default {
     components: {
@@ -14,6 +15,7 @@ export default {
         MainPostSections,
         MainTestimonialsCaruosel,
         MainTabs,
+        MainCoursesSlider,
     }
 }
 </script>
@@ -25,6 +27,7 @@ export default {
     <MainPostSections></MainPostSections>
     <MainTestimonialsCaruosel></MainTestimonialsCaruosel>
     <MainTabs></MainTabs>
+    <MainCoursesSlider></MainCoursesSlider>
   </main>
   <TheFooter></TheFooter>
 </template>

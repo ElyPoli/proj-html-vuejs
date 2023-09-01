@@ -311,6 +311,12 @@ header {
         font-size: 3rem;
         top: 50%;
         transform: translateY(-50%);
+        transition: color .3s;
+        cursor: pointer;
+
+        &:hover {
+            color: $light-grey;
+        }
     }
 
     i:first-child {

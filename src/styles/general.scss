@@ -11,7 +11,8 @@ h1,
 h2,
 h3,
 h4,
-h5 {
+h5,
+h6 {
     font-family: Merriweather, serif;
     font-weight: 700;
     color: #303030;
@@ -35,6 +36,7 @@ a {
     font-size: .9rem;
     font-weight: bold;
     text-transform: uppercase;
+    transition: all .3s;
 
     &:hover,
     &:active,
@@ -48,4 +50,8 @@ a {
     color: $light-grey;
     font-size: .8rem;
     font-weight: bold;
+}
+
+.geometric-bg {
+    background-image: url("/public/img/section-bg.jpg");
 }

@@ -4,7 +4,7 @@ export default {
 </script>
 
 <template>
-    <div class="courses-slider-box pt-3 pb-3">
+    <div class="courses-slider-box geometric-bg pt-3 pb-3">
         <div class="container pt-5 pb-5">
             <h4 class="pb-3">Popular Online Courses</h4>
             <p class="pb-4">
@@ -117,7 +117,6 @@ export default {
 @use "../styles/partials/variables" as *;
 
 .courses-slider-box {
-    background-image: url("/public/img/section-bg.jpg");
     text-align: center;
     border-bottom: 1px solid $background-light;
     border-top: 1px solid $background-light;

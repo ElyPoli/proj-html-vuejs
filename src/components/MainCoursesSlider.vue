@@ -202,15 +202,4 @@ export default {
     }
 }
 
-.my-badge {
-    padding-left: 1rem;
-    padding-right: 1rem;
-}
-.my-badge-blue {
-    background-color: $primary-color;
-}
-.my-badge-yellow {
-    background-color: $yellow;
-}
-
 </style>

@@ -55,3 +55,14 @@ a {
 .geometric-bg {
     background-image: url("/public/img/section-bg.jpg");
 }
+
+.my-badge {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+.my-badge-blue {
+    background-color: $primary-color;
+}
+.my-badge-yellow {
+    background-color: $yellow;
+}

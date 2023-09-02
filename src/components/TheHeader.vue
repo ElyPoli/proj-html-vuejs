@@ -2,128 +2,189 @@
 export default {
     data() {
         return {
-            homeLinks: [
-                { name: "Home 1", star: false, active: false },
-                { name: "Home 2", star: true, active: false },
-                { name: "Home 3", star: false, active: false },
-                { name: "Home 4", star: true, active: false },
-                { name: "Home 5", star: false, active: false },
-                { name: "Home 6", star: false, active: false },
-                { name: "Home 7", star: false, active: false },
-                { name: "Home 8", star: false, active: false },
-                { name: "Home 9", star: false, active: false },
-                { name: "Home 10", star: true, active: true },
-                { name: "Home 11", star: false, active: false },
-                { name: "Home 12", star: true, active: false },
-                { name: "Landing", star: false, active: false },
-            ],
-            coursesLinks: [
+            listNavLinks: [
                 {
-                    subtitle: "Features",
-                    childsLink: [
-                        { name: "All Courses", img: "" },
-                        { name: "Standard List", img: "" },
-                        { name: "Course Single", img: "" },
-                        { name: "User dashboard", img: "" },
-                    ]
+                    title: "Home",
+                    subheading: "",
+                    secondLevelMenu: [
+                        { name: "Home 1", star: false, active: false, thirdLevelMenu: "" },
+                        { name: "Home 2", star: true, active: false, thirdLevelMenu: "" },
+                        { name: "Home 3", star: false, active: false, thirdLevelMenu: "" },
+                        { name: "Home 4", star: true, active: false, thirdLevelMenu: "" },
+                        { name: "Home 5", star: false, active: false, thirdLevelMenu: "" },
+                        { name: "Home 6", star: false, active: false, thirdLevelMenu: "" },
+                        { name: "Home 7", star: false, active: false, thirdLevelMenu: "" },
+                        { name: "Home 8", star: false, active: false, thirdLevelMenu: "" },
+                        { name: "Home 9", star: false, active: false, thirdLevelMenu: "" },
+                        { name: "Home 10", star: true, active: true, thirdLevelMenu: "" },
+                        { name: "Home 11", star: false, active: false, thirdLevelMenu: "" },
+                        { name: "Home 12", star: true, active: false, thirdLevelMenu: "" },
+                        { name: "Landing", star: false, active: false, thirdLevelMenu: "" },
+                    ],
                 },
                 {
-                    subtitle: "Business",
-                    childsLink: [
-                        { name: "", img: "courses-carousel-4.jpg", cost: "$40", pay: "true" },
-                    ]
+                    title: "Courses",
+                    subheading: [
+                        {
+                            name: "Features",
+                            secondLevelColumn: [
+                                { name: "All Courses", img: "", pay: "", free: "" },
+                                { name: "Standard List", img: "", pay: "", free: "" },
+                                { name: "Course Single", img: "", pay: "", free: "" },
+                                { name: "User dashboard", img: "", pay: "", free: "" },
+                            ],
+                        },
+                        {
+                            name: "Business",
+                            secondLevelColumn: [
+                                { name: "", img: "courses-carousel-4.jpg", pay: "$40", free: "" },
+                            ],
+                        },
+                        {
+                            name: "Languages",
+                            secondLevelColumn: [
+                                { name: "", img: "courses-carousel-1.jpg", pay: "$20", free: "" },
+                            ],
+                        },
+                        {
+                            name: "Programming",
+                            secondLevelColumn: [
+                                { name: "", img: "courses-carousel-2.jpg", pay: "", free: "Free" },
+                            ],
+                        },
+                    ],
+                    secondLevelMenu: "",
                 },
                 {
-                    subtitle: "Languages",
-                    childsLink: [
-                        { name: "", img: "courses-carousel-1.jpg", cost: "$20", pay: "true" },
-                    ]
-                }
-                ,
-                {
-                    subtitle: "Programming",
-                    childsLink: [
-                        { name: "", img: "courses-carousel-2.jpg", cost: "FREE", pay: "false" },
-                    ]
-                },
-            ],
-            instructorsLinks: [
-                { name: "Become an Instructor" },
-                { name: "Instructor Single" },
-            ],
-            eventsLinks: [
-                { name: "Events Calendar" },
-                { name: "Events List" },
-                { name: "Event Single" },
-            ],
-            pagesLinks: [
-                { name: "About" },
-                { name: "Gallery" },
-                { name: "Pricing Plan" },
-                { name: "Blog", },
-                { name: "Shop", },
-                { name: "Forums", },
-                { name: "Contact" },
-                { name: "FAQ" },
-                { name: "Coming Soon" },
-                { name: "Error Page" },
-            ],
-            elementsLinks: [
-                {
-                    subtitle: "Course Shortcodes",
-                    childsLink: [
-                        { name: "Course List" },
-                        { name: "Course Slider" },
-                        { name: "Course Table" },
-                        { name: "Course Features" },
-                        { name: "Instructor List" },
-                        { name: "Instructor Slider" },
-                        { name: "Education Timeline" },
-                        { name: "Advanced Course Search" },
-                        { name: "Link Image List" },
-                    ]
+                    title: "Instructors",
+                    subheading: "",
+                    secondLevelMenu: [
+                        { name: "Become an Instructor", star: false, active: false, thirdLevelMenu: "" },
+                        { name: "Instructor Single", star: false, active: false, thirdLevelMenu: "" },
+                    ],
                 },
                 {
-                    subtitle: "Classic",
-                    childsLink: [
-                        { name: "Accordions & Toggles" },
-                        { name: "Tabs" },
-                        { name: "Buttons" },
-                        { name: "Call To Action" },
-                        { name: "Contact Form" },
-                        { name: "Separators" },
-                        { name: "Icon Width Text" },
-                        { name: "Blockquote" },
-                        { name: "Typography" },
-                    ]
+                    title: "Events",
+                    subheading: "",
+                    secondLevelMenu: [
+                        { name: "Events Calendar", star: false, active: false, thirdLevelMenu: "" },
+                        { name: "Events List", star: false, active: false, thirdLevelMenu: "" },
+                        { name: "Event Single", star: false, active: false, thirdLevelMenu: "" },
+                    ],
                 },
                 {
-                    subtitle: "Course Shortcodes",
-                    childsLink: [
-                        { name: "Couunters" },
-                        { name: "Countdown" },
-                        { name: "Pie Charts" },
-                        { name: "Google Maps" },
-                        { name: "Process" },
-                        { name: "Progress Bar" },
-                        { name: "Events List" },
-                        { name: "Pricing Tables" },
-                        { name: "Comparison Pricing Tables" },
-                    ]
+                    title: "Pages",
+                    subheading: "",
+                    secondLevelMenu: [
+                        { name: "About", star: false, active: false, thirdLevelMenu: "" },
+                        { name: "Gallery", star: false, active: false, thirdLevelMenu: "" },
+                        { name: "Pricing Plan", star: false, active: false, thirdLevelMenu: "" },
+                        {
+                            name: "Blog", star: false, active: false,
+                            thirdLevelMenu: [
+                                { name: "Standard List" },
+                                { name: "Masonry List" },
+                                { name: "Blog Split" },
+                                { name: "Standard Post" },
+                                { name: "Quote Post" },
+                                { name: "Link Post" },
+                                { name: "Audio Post" },
+                                { name: "Video Post" },
+                            ],
+                        },
+                        {
+                            name: "Shop", star: false, active: false,
+                            thirdLevelMenu: [
+                                { name: "Shop List" },
+                                { name: "Standard Product" },
+                                { name: "Grouped Product" },
+                                { name: "External Product" },
+                                { name: "Variable Product" },
+                                { name: "Three Columns Grid" },
+                                { name: "Three Columns Wide" },
+                                { name: "Four Columns Grid" },
+                                { name: "Four Columns Wide" },
+                                { name: "Five Columns Grid" },
+                                { name: "Five Columns Wide" },
+                                { name: "My account" },
+                                { name: "Cart" },
+                                { name: "Checkout" },
+                            ],
+                        },
+                        {
+                            name: "Forums", star: false, active: false,
+                            thirdLevelMenu: [
+                                { name: "All Forums" },
+                                { name: "Forum Topic" },
+                            ],
+                        },
+                        { name: "Contact", star: false, active: false, thirdLevelMenu: "" },
+                        { name: "FAQ", star: false, active: false, thirdLevelMenu: "" },
+                        { name: "Coming Soon", star: false, active: false, thirdLevelMenu: "" },
+                        { name: "Error Page", star: false, active: false, thirdLevelMenu: "" },
+                    ],
                 },
                 {
-                    subtitle: "Presentation",
-                    childsLink: [
-                        { name: "Team Shortcode" },
-                        { name: "Testimonials" },
-                        { name: "Clients" },
-                        { name: "Blog List Shortcode" },
-                        { name: "Twitter List" },
-                        { name: "Product List" },
-                        { name: "Image Gallery" },
-                        { name: "Masonry Gallery" },
-                        { name: "Video Button" },
-                    ]
+                    title: "Elements",
+                    subheading: [
+                        {
+                            name: "Course Shortcodes",
+                            secondLevelColumn: [
+                                { name: "Course List", img: "", pay: "", free: "" },
+                                { name: "Course Slider", img: "", pay: "", free: "" },
+                                { name: "Course Table", img: "", pay: "", free: "" },
+                                { name: "Course Features", img: "", pay: "", free: "" },
+                                { name: "Instructor List", img: "", pay: "", free: "" },
+                                { name: "Instructor Slider", img: "", pay: "", free: "" },
+                                { name: "Education Timeline", img: "", pay: "", free: "" },
+                                { name: "Advanced Course Search", img: "", pay: "", free: "" },
+                                { name: "Link Image List", img: "", pay: "", free: "" },
+                            ],
+                        },
+                        {
+                            name: "Classic",
+                            secondLevelColumn: [
+                                { name: "Accordions & Toggles", img: "", pay: "", free: "" },
+                                { name: "Tabs", img: "", pay: "", free: "" },
+                                { name: "Buttons", img: "", pay: "", free: "" },
+                                { name: "Call To Action", img: "", pay: "", free: "" },
+                                { name: "Contact Form", img: "", pay: "", free: "" },
+                                { name: "Separators", img: "", pay: "", free: "" },
+                                { name: "Icon Width Text", img: "", pay: "", free: "" },
+                                { name: "Blockquote", img: "", pay: "", free: "" },
+                                { name: "Typography", img: "", pay: "", free: "" },
+                            ],
+                        },
+                        {
+                            name: "Course Shortcodes",
+                            secondLevelColumn: [
+                                { name: "Couunters", img: "", pay: "", free: "" },
+                                { name: "Countdown", img: "", pay: "", free: "" },
+                                { name: "Pie Charts", img: "", pay: "", free: "" },
+                                { name: "Google Maps", img: "", pay: "", free: "" },
+                                { name: "Process", img: "", pay: "", free: "" },
+                                { name: "Progress Bar", img: "", pay: "", free: "" },
+                                { name: "Events List", img: "", pay: "", free: "" },
+                                { name: "Pricing Tables", img: "", pay: "", free: "" },
+                                { name: "Comparison Pricing Tables", img: "", pay: "", free: "" },
+                            ],
+                        },
+                        {
+                            name: "Presentation",
+                            secondLevelColumn: [
+                                { name: "Team Shortcode", img: "", pay: "", free: "" },
+                                { name: "Testimonials", img: "", pay: "", free: "" },
+                                { name: "Clients", img: "", pay: "", free: "" },
+                                { name: "Blog List Shortcode", img: "", pay: "", free: "" },
+                                { name: "Twitter List", img: "", pay: "", free: "" },
+                                { name: "Product List", img: "", pay: "", free: "" },
+                                { name: "Image Gallery", img: "", pay: "", free: "" },
+                                { name: "Masonry Gallery", img: "", pay: "", free: "" },
+                                { name: "Video Button", img: "", pay: "", free: "" },
+                            ],
+                        },
+                    ],
+                    secondLevelMenu: "",
                 },
             ],
         };
@@ -145,6 +206,7 @@ export default {
             </div>
             <i class="fa-solid fa-chevron-right"></i>
         </div>
+        <!-- Menu di navigazione -->
         <nav class="navbar navbar-expand-lg">
             <div class="container d-flex align-items-center justify-content-between">
                 <div>
@@ -153,95 +215,62 @@ export default {
                     </a>
                 </div>
                 <div class="d-flex align-items-center">
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav">
-                            <!-- Home -->
-                            <li class="nav-item dropdown">
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item dropdown" v-for="menuSection in listNavLinks" :key="menuSection.title">
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                     aria-expanded="false">
-                                    Home
+                                    {{ menuSection.title }}
                                 </a>
-                                <ul class="dropdown-menu">
-                                    <li v-for="(link, i) in homeLinks" :key="i">
+                                <ul class="dropdown-menu my-dropdown-center" aria-labelledby="navbarDropdownMenuLink">
+                                    <!-- Menù di secondo livello semplice -->
+                                    <li class="open-third-level" v-for="(secondLevelLink, i) in menuSection.secondLevelMenu"
+                                        :key="i" v-if="menuSection.secondLevelMenu">
                                         <a href="#"
-                                            v-bind:class="link.active ? 'nav-link-active dropdown-item d-flex align-items-center' : 'dropdown-item d-flex align-items-center'">{{
-                                                link.name }}
-                                            <i class="fa-solid fa-star pb-1 ps-1" v-if="link.star === true"></i>
+                                            v-bind:class="secondLevelLink.active ? 'nav-link-active dropdown-item d-flex align-items-center' : 'dropdown-item d-flex align-items-center'">
+                                            {{ secondLevelLink.name }}
+                                            <i class="fa-solid fa-star pb-1 ps-1" v-if="secondLevelLink.star === true"></i>
                                         </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <!-- Courses -->
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                    aria-expanded="false">
-                                    Courses
-                                </a>
-                                <ul class="dropdown-menu my-show my-dropdown-center">
-                                    <li v-for="section in coursesLinks" :key="section.subtitle">
-                                        <p>{{ section.subtitle }}</p>
-                                        <ul class="list-unstyled pe-5 pt-2">
-                                            <li v-for="(link, i) in section.childsLink" :key="'link_' + i">
-                                                <a class="dropdown-item" href="#" v-if="link.name">{{ link.name }}</a>
-                                                <img class="nav-img" v-bind:src="`/public/img/${link.img}`" alt=""
-                                                    v-if="link.img">
+                                        <!-- Menù di terzo livello semplice -->
+                                        <ul class="dropdown-menu dropdown-submenu third-level-link"
+                                            v-if="secondLevelLink.thirdLevelMenu">
+                                            <li v-for="(thirdLevelLink, a) in secondLevelLink.thirdLevelMenu" :key="a">
+                                                <a class="dropdown-item" href="#">
+                                                    {{ thirdLevelLink.name }}
+                                                </a>
                                             </li>
                                         </ul>
                                     </li>
-                                </ul>
-                            </li>
-                            <!-- Instructors -->
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                    aria-expanded="false">
-                                    Instructors
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li v-for="(link, i) in instructorsLinks" :key="i">
-                                        <a href="#" class="dropdown-item"> {{ link.name }} </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <!-- Events -->
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                    aria-expanded="false">
-                                    Events
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li v-for="(link, i) in eventsLinks" :key="i">
-                                        <a href="#" class="dropdown-item"> {{ link.name }} </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <!-- Pages -->
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                    aria-expanded="false">
-                                    Pages
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li v-for="link in pagesLinks" :key="link.name">
-                                        <a href="#" class="dropdown-item"> {{ link.name }} </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <!-- Elements -->
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                    aria-expanded="false">
-                                    Elements
-                                </a>
-                                <ul class="dropdown-menu my-show my-dropdown-center">
-                                    <li v-for="section in elementsLinks" :key="section.subtitle">
-                                        <p>{{ section.subtitle }}</p>
-                                        <ul class="list-unstyled pe-1">
-                                            <li v-for="(link, i) in section.childsLink" :key="'link_' + i">
-                                                <a class="dropdown-item" href="#">{{ link.name }}</a>
+                                    <!-- Menù di secondo livello a colonne -->
+                                    <li>
+                                        <ul class="items-flex list-unstyled">
+                                            <li v-for="(column, z) in menuSection.subheading" :key="z"
+                                                v-if="menuSection.subheading">
+                                                <p class="dropdown-item" href="#">{{ column.name }}</p>
+                                                <ul class="list-unstyled pe-5 pt-2">
+                                                    <li v-for="(link, x) in column.secondLevelColumn" :key="x">
+                                                        <a class="dropdown-item" href="#" v-if="link.name">{{ link.name
+                                                        }}</a>
+                                                        <img class="nav-img" v-bind:src="`/public/img/${link.img}`" alt=""
+                                                            v-if="link.img">
+                                                        <div class="pt-2">
+                                                            <span class="badge rounded-pill my-badge my-badge-blue"
+                                                                v-if="link.pay">
+                                                                {{ link.pay }}
+                                                            </span>
+                                                            <span
+                                                                class="badge rounded-pill my-badge my-badge-yellow text-uppercase"
+                                                                v-if="link.free">
+                                                                {{ link.free }}
+                                                            </span>
+                                                        </div>
+                                                    </li>
+                                                </ul>
                                             </li>
                                         </ul>
                                     </li>
@@ -270,7 +299,8 @@ export default {
 <style lang="scss" scoped>
 @use "../styles/partials/variables" as *;
 
-p, h2 {
+p,
+h2 {
     color: white;
 }
 
@@ -330,6 +360,31 @@ header {
     }
 }
 
+.dropdown-menu li {
+    position: relative;
+}
+
+.dropdown-menu .dropdown-submenu {
+    display: none !important;
+    position: absolute;
+    left: 100%;
+    top: -7px;
+}
+
+.dropdown-menu .dropdown-submenu-left {
+    right: 100%;
+    left: auto;
+}
+
+.dropdown:hover .items-flex {
+    display: flex !important;
+    justify-content: center;
+}
+
+.open-third-level:hover .third-level-link {
+    display: block !important;
+}
+
 .navbar {
     padding-top: 2rem;
 }
@@ -343,7 +398,7 @@ header {
 .my-dropdown-center {
     position: absolute;
     right: 50%;
-    transform: translateX(20%);
+    transform: translateX(45%);
 }
 
 .nav-link,
@@ -376,7 +431,6 @@ header {
     border: none;
     border-top: 3px solid $primary-color;
     border-radius: 0;
-    margin-top: 1rem;
 
     .dropdown-item {
         color: $light-grey;

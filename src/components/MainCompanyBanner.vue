@@ -30,7 +30,7 @@ export default {
 </script>
 
 <template>
-    <div class="container pt-5 pb-5">
+    <div class="container pt-5 pb-2">
         <div class="row row-cols-lg-5 row-cols-md-3 row-cols-sm-2 row-cols-1 gy-4">
             <div class="col" v-for="(card, i) in companysList" :key="i">
                 <div class="company-banner-box">

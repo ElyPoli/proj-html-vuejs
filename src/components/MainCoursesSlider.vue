@@ -12,7 +12,7 @@ export default {
                 voluptate expedita minus, nulla temporibus dolores nobis excepturi recusandae saepe? Quis sit error iusto!
                 Ullam!
             </p>
-            <div class="row row-cols-4 justify-content-center">
+            <div class="row row-cols-1 row-cols-md-3 justify-content-center">
                 <!-- Card 1 -->
                 <div class="col">
                     <div class="card">
@@ -37,7 +37,7 @@ export default {
                                 </div>
                                 <div class="d-flex">
                                     <i class="fa-solid fa-tag fa-flip-horizontal"></i>
-                                    <p class="my-card-subtitle ps-2">Languages</p>
+                                    <p class="my-card-subtitle text-uppercase ps-2">Languages</p>
                                 </div>
                             </div>
                         </div>
@@ -67,7 +67,7 @@ export default {
                                 </div>
                                 <div class="d-flex">
                                     <i class="fa-solid fa-tag fa-flip-horizontal"></i>
-                                    <p class="my-card-subtitle ps-2">Programming</p>
+                                    <p class="my-card-subtitle text-uppercase ps-2">Programming</p>
                                 </div>
                             </div>
                         </div>
@@ -97,14 +97,14 @@ export default {
                                 </div>
                                 <div class="d-flex">
                                     <i class="fa-solid fa-tag fa-flip-horizontal"></i>
-                                    <p class="my-card-subtitle ps-2">Languages</p>
+                                    <p class="my-card-subtitle text-uppercase ps-2">Languages</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="courses-slider-player pt-3">
+            <div class="courses-slider-player pt-5">
                 <i class="fa-solid fa-circle pe-2"></i>
                 <i class="fa-solid fa-circle pe-2"></i>
                 <i class="fa-solid fa-circle"></i>
@@ -182,12 +182,6 @@ export default {
             color: $grey;
         }
     }
-}
-
-.my-card-subtitle {
-    color: $light-grey;
-    font-size: .8rem;
-    font-weight: bold;
 }
 
 .courses-slider-player {

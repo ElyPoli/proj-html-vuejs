@@ -6,6 +6,7 @@ import MainPostSections from "./components/MainPostSections.vue";
 import MainTestimonialsCaruosel from "./components/MainTestimonialsCaruosel.vue";
 import MainTabs from "./components/MainTabs.vue";
 import MainCoursesSlider from "./components/MainCoursesSlider.vue";
+import MainTeacherSection from "./components/MainTeacherSection.vue";
 
 export default {
     components: {
@@ -16,6 +17,7 @@ export default {
         MainTestimonialsCaruosel,
         MainTabs,
         MainCoursesSlider,
+        MainTeacherSection,
     }
 }
 </script>
@@ -28,6 +30,7 @@ export default {
     <MainTestimonialsCaruosel></MainTestimonialsCaruosel>
     <MainTabs></MainTabs>
     <MainCoursesSlider></MainCoursesSlider>
+    <MainTeacherSection></MainTeacherSection>
   </main>
   <TheFooter></TheFooter>
 </template>

@@ -59,6 +59,7 @@ export default {
 @use "../styles/partials/variables" as *;
 
 .my-section-box {
+    overflow: hidden;
 
     img {
         height: 500px;

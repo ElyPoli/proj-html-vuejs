@@ -8,6 +8,7 @@ import MainTabs from "./components/MainTabs.vue";
 import MainCoursesSlider from "./components/MainCoursesSlider.vue";
 import MainTeacherSection from "./components/MainTeacherSection.vue";
 import MainPricingPlans from "./components/MainPricingPlans.vue";
+import MainCompanyBanner from "./components/MainCompanyBanner.vue";
 
 export default {
     components: {
@@ -20,6 +21,7 @@ export default {
         MainCoursesSlider,
         MainTeacherSection,
         MainPricingPlans,
+        MainCompanyBanner,
     }
 }
 </script>
@@ -34,6 +36,7 @@ export default {
     <MainCoursesSlider></MainCoursesSlider>
     <MainTeacherSection></MainTeacherSection>
     <MainPricingPlans></MainPricingPlans>
+    <MainCompanyBanner></MainCompanyBanner>
   </main>
   <TheFooter></TheFooter>
 </template>

@@ -187,24 +187,68 @@ export default {
                     secondLevelMenu: "",
                 },
             ],
+            headerSlider: [
+                {
+                    img: "header-slide-1.jpg",
+                    title: "Accelerate Your Career",
+                    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad sint necessitatibus magni deleniti ut ipsa ullam unde, exercitationem amet nisi",
+                    button: "Register now",
+                    player: false,
+                },
+                {
+                    img: "header-slide-2.jpg",
+                    title: "Premium Education",
+                    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad sint necessitatibus magni deleniti ut ipsa ullam unde, exercitationem amet nisi",
+                    button: "",
+                    player: true,
+                },
+                {
+                    img: "header-slide-3.jpg",
+                    title: "Contemporary Ideas",
+                    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad sint necessitatibus magni deleniti ut ipsa ullam unde, exercitationem amet nisi",
+                    button: "Register now",
+                    player: false,
+                },
+            ],
+            currentSlide: 0,
         };
+    },
+    methods: {
+        prevSlide() {
+            this.currentSlide--;
+            if (this.currentSlide < 0) {
+                this.currentSlide = this.headerSlider.length - 1;
+            }
+        },
+        nextSlide() {
+            this.currentSlide++;
+            if (this.currentSlide > this.headerSlider.length - 1) {
+                this.currentSlide = 0;
+            }
+        },
     },
 }
 </script>
 
 <template>
     <header>
+        <!-- Slider -->
         <div class="header-slider">
-            <i class="fa-solid fa-chevron-left"></i>
-            <div class="header-slider-text">
-                <h2>Accelerate Your Career</h2>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad sint necessitatibus magni deleniti ut ipsa
-                    ullam unde, exercitationem amet nisi.
-                </p>
-                <button type="button" class="btn my-btn mt-5">Register now</button>
+            <i class="fa-solid fa-chevron-left player-icon" @click="prevSlide()"></i>
+            <div v-for="(slide, i) in headerSlider" :key="i"
+                v-bind:class="(currentSlide === i ? 'slide-active slide' : 'slide')">
+                <img v-bind:src="`/public/img/${slide.img}`" alt="Header Slide">
             </div>
-            <i class="fa-solid fa-chevron-right"></i>
+            <i class="fa-solid fa-chevron-right player-icon" @click="nextSlide()"></i>
+            <div v-for="(slide, i) in headerSlider" :key="i"
+                v-bind:class="(currentSlide === i ? 'header-slider-text-active header-slider-text' : 'header-slider-text')">
+                <h2>{{ slide.title }}</h2>
+                <p>{{ slide.text }}</p>
+                <button type="button" class="btn my-btn mt-5" v-if="slide.button">{{ slide.button }}</button>
+                <button type="button" class="btn my-btn my-btn-play mt-5" v-if="slide.player">
+                    <i class="fa-solid fa-play"></i>
+                </button>
+            </div>
         </div>
         <!-- Menu di navigazione -->
         <nav class="navbar navbar-expand-lg">
@@ -306,57 +350,99 @@ h2 {
 
 header {
     position: relative;
-    background-image: url("/public/img/header-slide-1.jpg");
     height: 880px;
 }
 
 .header-slider {
     width: 100%;
 
-    .header-slider-text,
-    i {
+    .player-icon {
         position: absolute;
         color: white;
-    }
-
-    .header-slider-text {
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        text-align: center;
-
-        h2 {
-            font-size: 4.5rem;
-            margin: 0;
-            padding-bottom: 1.3rem;
-        }
-
-        p {
-            font-size: 1.3rem;
-            margin: 0;
-        }
-    }
-
-    i {
         font-size: 3rem;
         top: 50%;
         transform: translateY(-50%);
         transition: color .3s;
         cursor: pointer;
+        z-index: 5;
+
+        &:first-of-type {
+            padding-left: 2rem;
+            left: 0;
+        }
+
+        &:last-of-type {
+            padding-right: 2rem;
+            right: 0;
+        }
 
         &:hover {
             color: $light-grey;
         }
     }
 
-    i:first-child {
-        padding-left: 2rem;
-        left: 0;
+    img {
+        position: absolute;
+        top: 0;
+        right: 0;
+        overflow: hidden;
     }
 
-    i:last-child {
-        padding-right: 2rem;
-        right: 0;
+    .slide {
+        opacity: 0;
+        transition: all .5s;
+    }
+
+    .slide.slide-active {
+        opacity: 1;
+    }
+}
+
+.header-slider-text {
+    position: absolute;
+    color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    display: none;
+
+    h2 {
+        font-size: 4.5rem;
+        margin: 0;
+        padding-bottom: 1.3rem;
+    }
+
+    p {
+        font-size: 1.3rem;
+        margin: 0;
+    }
+}
+
+.header-slider-text.header-slider-text-active {
+    display: inline-block;
+}
+
+.my-btn-play {
+    border-radius: 50%;
+    background-color: #ffffff;
+    aspect-ratio: 1/1;
+    padding: 0;
+    margin: 0;
+    height: 90px;
+
+    i {
+        color: $dark-grey;
+        font-size: 2rem;
+        padding-left: .3rem;
+        padding-top: .3rem;
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+        background-color: #ffffff;
+        transform: scale(1.1);
     }
 }
 
@@ -386,7 +472,8 @@ header {
 }
 
 .navbar {
-    padding-top: 2rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
 }
 
 .navbar-nav .nav-item.dropdown {

@@ -41,7 +41,7 @@ a {
     &:hover,
     &:active,
     &:focus {
-        background-color: $primary-color-hover !important;
+        background-color: $primary-color-hover;
         color: white;
     }
 }

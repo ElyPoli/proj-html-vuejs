@@ -323,12 +323,18 @@ export default {
                         </ul>
                     </div>
                     <!-- Icone -->
-                    <div class="my-icons-link ps-2">
+                    <div class="my-icons-link ps-2 d-flex jusify-content-center align-items-center">
                         <a href="#">
                             <i class="fa-solid fa-magnifying-glass fa-flip-horizontal ps-3"></i>
                         </a>
                         <a href="#">
-                            <i class="fa-solid fa-bag-shopping pe-3"></i>
+                            <div class="dropdown">
+                                <i class="fa-solid fa-bag-shopping pe-3 dropdown-toggle"
+                                type="button" data-bs-toggle="dropdown" aria-expanded="false"></i>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">No products in the cart.</a></li>
+                                </ul>
+                            </div>
                         </a>
                         <a href="#">
                             <i class="fa-solid fa-bars"></i>
@@ -489,7 +495,7 @@ header {
 }
 
 .nav-link,
-.my-icons-link>a {
+.my-icons-link i {
     text-transform: uppercase;
     color: #ffffff;
     font-size: .9rem;

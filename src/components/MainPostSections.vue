@@ -28,7 +28,7 @@ export default {
     <div class="my-section-line"></div>
 
     <!-- Sezione 2 -->
-    <div class="container pt-5 pb-5">
+    <div class="container pt-5">
         <div class="row row-cols-1 row-cols-lg-2 align-items-center gy-2">
             <!-- Sezione 2 -->
             <div class="col my-section-box">
@@ -52,6 +52,11 @@ export default {
                 </div>
             </div>
         </div>
+    </div>
+
+    <!-- Immagine divisoria -->
+    <div class="divider-img">
+        <img src="/public/img/section-bg.jpg" alt="bg image">
     </div>
 </template>
 
@@ -108,18 +113,28 @@ export default {
     border-bottom: 1px solid $background-light;
 }
 
-.my-section-counter{
+.my-section-counter {
     display: flex;
     align-items: center;
     justify-content: start;
 
-    h4, h5 {
+    h4,
+    h5 {
         color: $primary-color;
     }
 
     h4 {
         font-size: $section-title-size;
     }
-    
+
+}
+
+.divider-img {
+    overflow: hidden;
+    height: 150px;
+
+    img {
+        object-fit: contain;
+    }
 }
 </style>

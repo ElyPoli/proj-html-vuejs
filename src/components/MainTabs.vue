@@ -131,7 +131,7 @@ export default {
 @use "../styles/partials/variables" as *;
 
 .tabs-container {
-    padding-top: 8rem;
+    padding-top: 7rem;
 }
 
 .tabs-navigation {

@@ -1,5 +1,91 @@
 <script>
 export default {
+    data() {
+        return {
+            tabsList: [
+                {
+                    title: "Learning Possibilities",
+                    text: "Lorem ipsum gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt",
+                    img: "tabs-icon-1.png",
+                    pointslist: [
+                        { point: "We enrich lives through learning.", },
+                        { point: "Maximizing potential through individual attention.", },
+                        { point: "The trusted name for specialized training.", },
+                        { point: "People teach. People learn. This is where they connect.", },
+                    ]
+                },
+                {
+                    title: "Inspiring Minds",
+                    text: "Lorem Ipsn gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt",
+                    img: "tabs-icon-2.png",
+                    pointslist: [
+                        { point: "Maximizing potential through individual attention.", },
+                        { point: "We enrich lives through learning.", },
+                        { point: "People teach. People learn. This is where they connect.", },
+                        { point: "The trusted name for specialized training.", },
+                    ]
+                },
+                {
+                    title: "Investing in Knowledge",
+                    text: "Lorem Ipsn gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt",
+                    img: "tabs-icon-3.png",
+                    pointslist: [
+                        { point: "We enrich lives through learning.", },
+                        { point: "Maximizing potential through individual attention.", },
+                        { point: "The trusted name for specialized training.", },
+                        { point: "People teach. People learn. This is where they connect.", },
+                    ]
+                },
+                {
+                    title: "Secure Your Future",
+                    text: "Lorem Ipsn gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt",
+                    img: "tabs-icon-4.png",
+                    pointslist: [
+                        { point: "Maximizing potential through individual attention.", },
+                        { point: "We enrich lives through learning.", },
+                        { point: "People teach. People learn. This is where they connect.", },
+                        { point: "The trusted name for specialized training.", },
+                    ]
+                },
+                {
+                    title: "Where Learning Begins",
+                    text: "Lorem Ipsn gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt",
+                    img: "tabs-icon-5.png",
+                    pointslist: [
+                        { point: "We enrich lives through learning.", },
+                        { point: "Maximizing potential through individual attention.", },
+                        { point: "The trusted name for specialized training.", },
+                        { point: "People teach. People learn. This is where they connect.	", },
+                    ]
+                },
+                {
+                    title: "Knowledge is Power",
+                    text: "Lorem Ipsn gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt",
+                    img: "tabs-icon-6.png",
+                    pointslist: [
+                        { point: "Maximizing potential through individual attention.", },
+                        { point: "We enrich lives through learning.", },
+                        { point: "People teach. People learn. This is where they connect.", },
+                        { point: "The trusted name for specialized training.", },
+                    ]
+                },
+            ],
+            tabsNavigation: [
+                { title: "What We Do" },
+                { title: "Degree Programme" },
+                { title: "Career Achievements" },
+                { title: "Personal Managment" },
+                { title: "Steps To Success" },
+                { title: "Knowledge Transfer" },
+            ],
+            currentTab: 0,
+        }
+    },
+    methods: {
+        btnChangeTab(index) {
+            this.currentTab = index;
+        }
+    },
 }
 </script>
 
@@ -9,47 +95,30 @@ export default {
             <div class="col-12 col-sm-3">
                 <div class="tabs-navigation">
                     <ul class="list-group">
-                        <li class="list-group-item">What We Do</li>
-                        <li class="list-group-item">Degree Programme</li>
-                        <li class="list-group-item">Career Achievements</li>
-                        <li class="list-group-item">Personal Managment</li>
-                        <li class="list-group-item">Steps To Success</li>
-                        <li class="list-group-item">Knowledge Transfer</li>
+                        <li class="list-group-item" v-for="(navigation, i) in tabsNavigation" :key="i"
+                            v-bind:class="(currentTab === i ? 'navigation navigation-active' : 'navigation')"
+                            @click="btnChangeTab(i)">
+                            {{ navigation.title }}
+                        </li>
                     </ul>
                 </div>
             </div>
             <div class="col-12 col-sm-9 d-flex align-items-center">
-                <div class="tabs-card">
-                    <h5 class="pb-3">Learning Possibilities</h5>
-                    <p class="pb-3">
-                        Lorem ipsum gravida nibh vel velit auctor aliquetn sollicitudirem quibibendum auci elit cons
-                        equat
-                        ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi
-                        accumsan ipsum velit. Nam nec tellus a odio tincidunt
-                    </p>
+                <div v-for="(tab, i) in tabsList" :key="i"
+                    v-bind:class="(currentTab === i ? 'tab-active tabs-card' : 'tabs-card')">
+                    <h5 class="pb-3">{{ tab.title }}</h5>
+                    <p class="pb-3">{{ tab.text }}</p>
                     <div class="row align-items-end">
                         <div class="col-8">
                             <ul class="list-unlisted p-0">
-                                <li class="list-group-item">
+                                <li class="list-group-item" v-for="(elementList, z) in tab.pointslist" :key="z">
                                     <i class="fa-solid fa-check pe-1"></i>
-                                    We enrich lives through learning.
-                                </li>
-                                <li class="list-group-item">
-                                    <i class="fa-solid fa-check pe-1"></i>
-                                    Maximizing potential through individual attention.
-                                </li>
-                                <li class="list-group-item">
-                                    <i class="fa-solid fa-check pe-1"></i>
-                                    The trusted name for specialized training.
-                                </li>
-                                <li class="list-group-item">
-                                    <i class="fa-solid fa-check pe-1"></i>
-                                    People teach. People learn. This is where they connect.
+                                    {{ elementList.point }}
                                 </li>
                             </ul>
                         </div>
                         <div class="col-4">
-                            <img src="/public/img/tabs-icon-1.png" alt="What We Do">
+                            <img v-bind:src="`/public/img/${tab.img}`" v-bind:alt="tab.title">
                         </div>
                     </div>
                 </div>
@@ -90,6 +159,7 @@ export default {
 .tabs-card {
     padding-left: 4rem;
     padding-right: 4rem;
+    display: none;
 
     img {
         width: 150px;
@@ -111,5 +181,14 @@ export default {
             color: $primary-color;
         }
     }
+}
+
+.tabs-card.tab-active {
+    display: inline-block;
+}
+
+.navigation.navigation-active {
+    border-left: 7px solid $primary-color;
+    color: $primary-color;
 }
 </style>

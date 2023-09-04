@@ -1,5 +1,113 @@
 <script>
 export default {
+    data() {
+        return {
+            coursesList: [
+                [
+                    {
+                        title: "Business English",
+                        subheading: "Preston Marshall",
+                        img: "courses-carousel-1.jpg",
+                        text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet a voluptatem dolore consequatur.",
+                        type: "Languages",
+                        subscribers: "0",
+                        pay: "$20",
+                        free: "",
+                    },
+                    {
+                        title: "Social Computing",
+                        subheading: "David Sanders",
+                        img: "courses-carousel-2.jpg",
+                        text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet a voluptatem dolore consequatur.",
+                        type: "Programming",
+                        subscribers: "0",
+                        pay: "",
+                        free: "Free",
+                    },
+                    {
+                        title: "Learning Spanish",
+                        subheading: "Jennie King",
+                        img: "courses-carousel-3.jpg",
+                        text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet a voluptatem dolore consequatur.",
+                        type: "Languages",
+                        subscribers: "0",
+                        pay: "$20",
+                        free: "",
+                    },
+                ],
+                [
+                    {
+                        title: "Basic Marketing",
+                        subheading: "Edward Bowman",
+                        img: "courses-carousel-4.jpg",
+                        text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet a voluptatem dolore consequatur.",
+                        type: "Business",
+                        subscribers: "0",
+                        pay: "$40",
+                        free: "",
+                    },
+                    {
+                        title: "Android Developer",
+                        subheading: "David Sanders",
+                        img: "courses-carousel-5.jpg",
+                        text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet a voluptatem dolore consequatur.",
+                        type: "Programming",
+                        subscribers: "0",
+                        pay: "",
+                        free: "Free",
+                    },
+                    {
+                        title: "Web Designing",
+                        subheading: "Jennifer Powell",
+                        img: "courses-carousel-6.jpg",
+                        text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet a voluptatem dolore consequatur.",
+                        type: "Programming",
+                        subscribers: "0",
+                        pay: "",
+                        free: "Free",
+                    },
+                ],
+                [
+                    {
+                        title: "Financial Modeling",
+                        subheading: "Edward Bowman",
+                        img: "courses-carousel-7.jpg",
+                        text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet a voluptatem dolore consequatur.",
+                        type: "Business",
+                        subscribers: "0",
+                        pay: "$20",
+                        free: "",
+                    },
+                    {
+                        title: "Academic English",
+                        subheading: "Dave Robbins",
+                        img: "courses-carousel-8.jpg",
+                        text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet a voluptatem dolore consequatur.",
+                        type: "Languages",
+                        subscribers: "0",
+                        pay: "",
+                        free: "Free",
+                    },
+                    {
+                        title: "Modern Psychology",
+                        subheading: "Kathryn Webb",
+                        img: "courses-carousel-9.jpg",
+                        text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet a voluptatem dolore consequatur.",
+                        type: "Business",
+                        subscribers: "0",
+                        pay: "$40",
+                        free: "",
+                    },
+                ],
+            ],
+            currentSlide: 0,
+        }
+    },
+    methods: {
+        btnChangeSlide(index) {
+            this.currentSlide = index;
+        }
+    },
 }
 </script>
 
@@ -12,102 +120,46 @@ export default {
                 voluptate expedita minus, nulla temporibus dolores nobis excepturi recusandae saepe? Quis sit error iusto!
                 Ullam!
             </p>
-            <div class="row row-cols-1 row-cols-md-3 justify-content-center">
-                <!-- Card 1 -->
-                <div class="col">
+            <div class="row row-cols-1 row-cols-md-3 justify-content-center" v-for="(cardGroup, i) in coursesList" :key="i">
+                <!-- Card  -->
+                <div v-for="(card, z) in cardGroup" :key="z"
+                    v-bind:class="(currentSlide === i ? 'col courses-active courses-card' : 'col courses-card')">
                     <div class="card">
                         <div class="position-relative">
                             <i class="fa-regular fa-heart"></i>
-                            <img src="/public/img/courses-carousel-1.jpg" class="card-img-top" alt="Business English">
+                            <img v-bind:src="`/public/img/${card.img}`" class="card-img-top" v-bind:alt="card.title">
                         </div>
                         <div class="card-body">
                             <div class="d-flex align-items-start justify-content-between">
-                                <h5 class="card-title">Business English</h5>
-                                <span class="badge rounded-pill my-badge my-badge-blue">$20</span>
+                                <h5 class="card-title">{{ card.title }}</h5>
+                                <span class="badge rounded-pill my-badge my-badge-blue" v-if="card.pay">
+                                    {{ card.pay }}
+                                </span>
+                                <span class="badge rounded-pill my-badge my-badge-yellow text-uppercase" v-if="card.free">
+                                    {{ card.free }}
+                                </span>
                             </div>
-                            <p class="my-card-subtitle">Preston Marshall</p>
-                            <p class="card-text">
-                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet a voluptatem dolore
-                                consequatur.
-                            </p>
+                            <p class="my-card-subtitle">{{ card.subheading }}</p>
+                            <p class="card-text">{{ card.text }}</p>
                             <div class="my-card-tags">
                                 <div class="d-flex pe-4">
                                     <i class="fa-solid fa-user"></i>
-                                    <p class="my-card-subtitle ps-2">0</p>
+                                    <p class="my-card-subtitle ps-2">{{ card.subscribers }}</p>
                                 </div>
                                 <div class="d-flex">
                                     <i class="fa-solid fa-tag fa-flip-horizontal"></i>
-                                    <p class="my-card-subtitle text-uppercase ps-2">Languages</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Card 2 -->
-                <div class="col">
-                    <div class="card">
-                        <div class="position-relative">
-                            <i class="fa-regular fa-heart"></i>
-                            <img src="/public/img/courses-carousel-2.jpg" class="card-img-top" alt="Social Computing">
-                        </div>
-                        <div class="card-body">
-                            <div class="d-flex align-items-start justify-content-between">
-                                <h5 class="card-title">Social Computing</h5>
-                                <span class="badge rounded-pill my-badge my-badge-yellow">FREE</span>
-                            </div>
-                            <p class="my-card-subtitle">David Sanders</p>
-                            <p class="card-text">
-                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet a voluptatem dolore
-                                consequatur.
-                            </p>
-                            <div class="my-card-tags">
-                                <div class="d-flex pe-4">
-                                    <i class="fa-solid fa-user"></i>
-                                    <p class="my-card-subtitle ps-2">0</p>
-                                </div>
-                                <div class="d-flex">
-                                    <i class="fa-solid fa-tag fa-flip-horizontal"></i>
-                                    <p class="my-card-subtitle text-uppercase ps-2">Programming</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Card 3 -->
-                <div class="col">
-                    <div class="card">
-                        <div class="position-relative">
-                            <i class="fa-regular fa-heart"></i>
-                            <img src="/public/img/courses-carousel-3.jpg" class="card-img-top" alt="Learn Spanish">
-                        </div>
-                        <div class="card-body">
-                            <div class="d-flex align-items-start justify-content-between">
-                                <h5 class="card-title">Learn Spanish</h5>
-                                <span class="badge rounded-pill my-badge my-badge-blue">$20</span>
-                            </div>
-                            <p class="my-card-subtitle">Jennie King</p>
-                            <p class="card-text">
-                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet a voluptatem dolore
-                                consequatur.
-                            </p>
-                            <div class="my-card-tags">
-                                <div class="d-flex pe-4">
-                                    <i class="fa-solid fa-user"></i>
-                                    <p class="my-card-subtitle ps-2">0</p>
-                                </div>
-                                <div class="d-flex">
-                                    <i class="fa-solid fa-tag fa-flip-horizontal"></i>
-                                    <p class="my-card-subtitle text-uppercase ps-2">Languages</p>
+                                    <p class="my-card-subtitle text-uppercase ps-2">{{ card.type }}</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <!-- Pulsanti di navigazione -->
             <div class="courses-slider-player pt-5">
-                <i class="fa-solid fa-circle pe-2"></i>
-                <i class="fa-solid fa-circle pe-2"></i>
-                <i class="fa-solid fa-circle"></i>
+                <i v-for="(btn, i) in coursesList" :key="i" @click="btnChangeSlide(i)"
+                    v-bind:class="(currentSlide === i ? 'fa-solid fa-circle pe-2 courses-btn-active' : 'fa-solid fa-circle pe-2')">
+                </i>
             </div>
         </div>
     </div>
@@ -171,6 +223,14 @@ export default {
     }
 }
 
+.courses-card {
+    display: none;
+}
+
+.courses-active.courses-card {
+    display: block;
+}
+
 .my-card-tags {
     color: $light-grey;
     cursor: pointer;
@@ -195,11 +255,10 @@ export default {
         &:active {
             opacity: 1;
         }
+    }
 
-        &:first-of-type {
-            opacity: 1;
-        }
+    i.courses-btn-active {
+        opacity: 1;
     }
 }
-
 </style>
